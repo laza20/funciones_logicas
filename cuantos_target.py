@@ -23,8 +23,6 @@ def obtener_targets(lista_num:List, nums_target:int)->List:
     suma = 0
     while i < len(lista_num):
         suma += lista_num[i] 
-        print(suma)
-        print(suma - nums_target)
         if suma - nums_target in dict_resultados:
             print(f"Resultado: {suma - nums_target}")
             dict_apariciones["cantidad_targets"] += dict_resultados[suma - nums_target]
