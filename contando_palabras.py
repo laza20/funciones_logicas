@@ -2,11 +2,19 @@
 Mostrar la longitud del sub array mas largo.
 """
 from typing import List, Dict, Any
+import re
 
 def ingresar_frase()->str:
     frase = input("Ingrese la frase que desea contar: ")
         
     return frase
+
+
+def limpiar_palabras(frase:str)->List:
+    frase_formateada = re.sub(r'[^a-zA-Z0-9]', ' ', frase)
+    print(frase_formateada)
+    return frase_formateada
+    
 
 def separar_palabras(frase:str)->Any:
     lista_palabras = frase.split(" ")
@@ -43,7 +51,8 @@ def inicializar():
     tanda = 1
     while fin_total != 1:
         frase = ingresar_frase()
-        dict_contabilizado, list_mayor = separar_palabras(frase)
+        frase_limpia = limpiar_palabras(frase)
+        dict_contabilizado, list_mayor = separar_palabras(frase_limpia)
         mostrar(dict_contabilizado, list_mayor, frase, tanda)
         fin_total = finaliza()
         tanda += 1
