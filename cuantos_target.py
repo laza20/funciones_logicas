@@ -1,5 +1,5 @@
 """
-Mostrar los elementos que mas veces son ingresados.
+Mostrar la cantidad de sub arrays que hay.
 """
 from typing import List
 
@@ -36,8 +36,7 @@ def obtener_targets(lista_num:List, nums_target:int)->List:
         
         i += 1
 
-    print(dict_resultados, dict_apariciones)
-    return dict_apariciones, dict_resultados
+    return dict_apariciones
             
     
         
