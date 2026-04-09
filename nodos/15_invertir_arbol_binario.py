@@ -13,12 +13,11 @@ from inicializar_nodos import nodos_con_hijos_bts
 
 def invertir_arbol(raiz):
     if raiz is None:
-        return None
+        return False
     
-    raiz.left, raiz.right = raiz.right, raiz.left
-    
-    invertir_arbol(raiz.left)
     invertir_arbol(raiz.right)
+    invertir_arbol(raiz.left)
+    raiz.left, raiz.right =  raiz.right, raiz.left
     
     return raiz
 
@@ -38,11 +37,10 @@ def inicializar():
     
     print("--- Árbol Original ---")
     pintar(raiz)
-
-    invertir_arbol(raiz)
-    
     print("\n--- Árbol Invertido ---")
+    invertir_arbol(raiz)
     pintar(raiz)
+    
     
     
 inicializar()
